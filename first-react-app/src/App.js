@@ -191,6 +191,25 @@ class ToggleWarning extends Component {
   }
 }
 
+class List extends Component {
+  render () {
+    const {item} = this.props
+    return (
+      <p>{item}</p>
+    )
+  }
+}
+class Index extends Component {
+  render () {
+    let arr = [1,2,3,4,5]
+    return (
+      <div>
+        {arr.map((arr, i) => <List item={arr} key={i}/>)}
+      </div>
+    )
+  }
+}
+
 
 class App extends Component {
   render() {
@@ -209,6 +228,7 @@ class App extends Component {
         <ConditionalRendering status={true}/>
         <LoginControl/>
         <ToggleWarning/>
+        <Index/>
       </div>
     );
   }
